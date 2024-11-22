@@ -1,0 +1,34 @@
+# A dictionary storing countries and their capitals for the quiz
+# The keys are country names, and the values are their capitals
+quiz_data = {
+     "France": "Paris",
+    "Albania": "Tirana",
+    "Italy": "Rome",
+    "Spain": "Madrid",
+    "Portugal": "Lisbon",
+    "Georgia": "Tbilisi",
+    "Belgium": "Brussels",
+    "Ireland": "Dublin",
+    "Norway": "Oslo",
+    "Turkey": "Ankara"
+}
+
+# Variable to keep track of the user's score
+score = 0
+
+# Loop through each country-capital pair in the quiz
+for country, capital in quiz_data.items():
+    # Request the user's current nation's capital.
+    users_answer = input(f"What's the capital of {country}? ").strip() # .strip() Removes extra spaces around input
+
+    # Check if the answer is correct, ignoring case differences
+    if users_answer.lower() == capital.lower():
+        # If correct, add the score and acknowledge it.
+        print("Nice! That's correct.")
+        score += 1
+    else:
+        # If incorrect, give ide the correct answer
+        print(f"Close,  the capital of {country} is actually {capital}.")
+
+# Display the user's final score with encouragement
+print(f"\nGreat job! You scored {score} out of {len(quiz_data)}.")
